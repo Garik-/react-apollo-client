@@ -19,7 +19,7 @@ const styles = theme => ({
   }
 })
 
-function Main (props) {
+function Games (props) {
   const { classes } = props
   return (
     <Query
@@ -49,8 +49,8 @@ function Main (props) {
   )
 }
 
-Main.propTypes = {
+Games.propTypes = {
   classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(Main)
+export default withStyles(styles)(Games)
