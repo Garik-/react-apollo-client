@@ -1,11 +1,17 @@
-import { Main } from 'Screens'
+import { Games, Categories } from 'Screens'
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'Games',
     exact: true,
-    component: Main
+    component: Games
+  },
+  {
+    path: '/categories',
+    name: 'Categories',
+    exact: true,
+    component: Categories
   }
 ]
 

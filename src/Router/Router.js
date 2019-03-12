@@ -3,7 +3,8 @@ import { Route, Switch } from 'react-router' // react-router v4
 import routes from './Routes'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import { Header } from 'Components'
+import { Header, Menu } from 'Components'
+import Grid from '@material-ui/core/Grid'
 
 const styles = {
   root: {
@@ -37,11 +38,13 @@ class Routes extends React.Component {
     const { classes } = this.props
     return (
       <Route render={({ location }) => (
-        <div className={classes.root}>
-          <Header />
-          {this.renderRoutes(location)}
-        </div>
-
+        <Grid container className={classes.root}>
+          <Grid item><Menu routes={routes}/></Grid>
+          <Grid item xs>
+            <Header />
+            {this.renderRoutes(location)}
+          </Grid>
+        </Grid>
       )} />
     )
   }
