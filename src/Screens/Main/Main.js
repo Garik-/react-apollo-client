@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
+import ErrorSnackbar from '../../Components/ErrorSnackbar';
 
 const styles = theme => ({
 })
@@ -12,9 +13,9 @@ function Main (props) {
     <Query
       query={gql`
       {
-        rates(currency: "USD") {
-          currency
-          rate
+        lol {
+          id
+          name
         }
       }
     `}
@@ -22,7 +23,7 @@ function Main (props) {
       {({ loading, error, data }) => {
         console.log({ loading, error, data })
         if (loading) return <p>Loading...</p>
-        if (error) return <p>Error :(</p>
+        if (error) return <ErrorSnackbar error={error} horizontal='bottom' vertical='left'/>
 
         return data.rates.map(({ currency, rate }) => (
           <div key={currency}>
