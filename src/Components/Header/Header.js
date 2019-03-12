@@ -17,7 +17,7 @@ function Header (props) {
     <AppBar position='static'>
       <Toolbar>
         <Typography variant='h6' color='inherit' className={classes.grow}>
-              DGaming Store
+              Gar|k
         </Typography>
       </Toolbar>
     </AppBar>
