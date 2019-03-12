@@ -13,16 +13,16 @@ const styles = theme => ({
     backgroundColor: theme.palette.error.dark
   },
   icon: {
-    fontSize: 20,
+    fontSize: 20
   },
   iconVariant: {
     opacity: 0.9,
-    marginRight: theme.spacing.unit,
+    marginRight: theme.spacing.unit
   },
   message: {
     display: 'flex',
-    alignItems: 'center',
-  },
+    alignItems: 'center'
+  }
 })
 
 class ErrorSnackbar extends React.Component {
@@ -75,6 +75,11 @@ ErrorSnackbar.propTypes = {
   error: PropTypes.object.isRequired,
   vertical: PropTypes.string,
   horizontal: PropTypes.string
+}
+
+ErrorSnackbar.defaultProps = {
+  vertical: 'bottom',
+  horizontal: 'left'
 }
 
 export default withStyles(styles)(ErrorSnackbar)

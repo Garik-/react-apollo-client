@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
-import ErrorSnackbar from '../../Components/ErrorSnackbar';
+import { ErrorSnackbar } from 'Components'
+import LinearProgress from '@material-ui/core/LinearProgress'
 
 const styles = theme => ({
 })
@@ -13,7 +14,7 @@ function Main (props) {
     <Query
       query={gql`
       {
-        lol {
+        games {
           id
           name
         }
@@ -22,14 +23,10 @@ function Main (props) {
     >
       {({ loading, error, data }) => {
         console.log({ loading, error, data })
-        if (loading) return <p>Loading...</p>
-        if (error) return <ErrorSnackbar error={error} horizontal='bottom' vertical='left'/>
+        if (loading) return <LinearProgress />
+        if (error) return <ErrorSnackbar error={error}/>
 
-        return data.rates.map(({ currency, rate }) => (
-          <div key={currency}>
-            <p>{currency}: {rate}</p>
-          </div>
-        ))
+        return (<div>23</div>)
       }}
     </Query>
   )
