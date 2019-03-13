@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { Menu } from 'Components'
-import Typography from '@material-ui/core/Typography';
-const HEADER_HEIGHT = 63
+import Typography from '@material-ui/core/Typography'
+const HEADER_HEIGHT = 64
 
 const styles = theme => {
   console.log(theme)
@@ -13,7 +13,7 @@ const styles = theme => {
       position: 'sticky',
       top: 0,
       height: '100vh',
-      width: 250,
+      width: 250
     },
     header: {
       height: HEADER_HEIGHT,
