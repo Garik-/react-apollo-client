@@ -8,13 +8,17 @@ import Typography from '@material-ui/core/Typography'
 const styles = theme => ({
   grow: {
     flexGrow: 1
+  },
+  appBar: {
+    top: 'auto',
+    bottom: 0,
   }
 })
 
 function Header (props) {
   const { classes } = props
   return (
-    <AppBar position='static'>
+    <AppBar position='fixed' color='primary' className={classes.appBar}>
       <Toolbar>
         <Typography variant='h6' color='inherit' className={classes.grow}>
               Gar|k

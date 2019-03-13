@@ -5,10 +5,15 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { Header, Menu } from 'Components'
 import Grid from '@material-ui/core/Grid'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import Paper from '@material-ui/core/Paper'
 
 const styles = {
   root: {
     flexGrow: 1
+  },
+  paper: {
+    paddingBottom: 64,
   }
 }
 
@@ -38,13 +43,13 @@ class Routes extends React.Component {
     const { classes } = this.props
     return (
       <Route render={({ location }) => (
-        <Grid container className={classes.root}>
-          <Grid item><Menu routes={routes}/></Grid>
-          <Grid item xs>
-            <Header />
+        <React.Fragment>
+          <CssBaseline />
+          <Paper square className={classes.paper}>
             {this.renderRoutes(location)}
-          </Grid>
-        </Grid>
+          </Paper>
+          <Header/>
+        </React.Fragment>
       )} />
     )
   }

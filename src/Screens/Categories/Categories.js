@@ -36,6 +36,7 @@ function Categories (props) {
 
         return (
           <div className={classes.root}>
+          sfsdf
             <AddButton className={classes.fab}/>
           </div>)
       }}

@@ -6,16 +6,22 @@ import gql from 'graphql-tag'
 import { ErrorSnackbar, AddButton } from 'Components'
 import { GameTable } from './Components'
 import LinearProgress from '@material-ui/core/LinearProgress'
+import Typography from '@material-ui/core/Typography'
 
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     position: 'relative'
   },
+  text: {
+    paddingTop: theme.spacing.unit * 2,
+    paddingLeft: theme.spacing.unit * 2,
+    paddingRight: theme.spacing.unit * 2,
+  },
   fab: {
     position: 'fixed',
-    bottom: theme.spacing.unit * 2,
-    right: theme.spacing.unit * 2
+    right: theme.spacing.unit,
+    bottom: theme.spacing.unit
   }
 })
 
@@ -41,6 +47,7 @@ function Games (props) {
 
         return (
           <div className={classes.root}>
+            <Typography className={classes.text} variant='h5' gutterBottom>Games</Typography>
             <GameTable games={data.games}/>
             <AddButton className={classes.fab}/>
           </div>)

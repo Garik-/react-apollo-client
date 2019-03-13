@@ -1,2 +1,2 @@
-import Games from './Main'
+import Games from './Games'
 export default Games

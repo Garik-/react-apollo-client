@@ -1,5 +1,5 @@
 import { Games, Categories } from 'Screens'
-
+// import GamesIcon from '@material-ui/icons/Games'
 const routes = [
   {
     path: '/',
@@ -10,7 +10,7 @@ const routes = [
   {
     path: '/categories',
     name: 'Categories',
-    exact: true,
+    exact: false,
     component: Categories
   }
 ]
