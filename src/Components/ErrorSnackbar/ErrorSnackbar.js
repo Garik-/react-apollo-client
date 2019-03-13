@@ -25,49 +25,44 @@ const styles = theme => ({
   }
 })
 
-class ErrorSnackbar extends React.Component {
-    state = {
-      open: true
+function ErrorSnackbar (props) {
+  const { vertical, horizontal, classes, error } = props
+  const [open, setOpen] = React.useState(true)
+
+  function handleClose (event, reason) {
+    if (reason === 'clickaway') {
+      return
     }
 
-    handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return
-      }
+    setOpen(false)
+  }
 
-      this.setState({ open: false })
-    }
-
-    render () {
-      const { vertical, horizontal, classes, error } = this.props
-      const { open } = this.state
-      return (<Snackbar
-        anchorOrigin={{ vertical, horizontal }}
-        open={open}
-        onClose={this.handleClose}
-      >
-        <SnackbarContent className={classes.error}
-          message={
-            <span id='client-snackbar' className={classes.message}>
-              <ErrorIcon className={classNames(classes.icon, classes.iconVariant)} />
-              {error.message}
-            </span>
-          }
-          action={[
-            <IconButton
-              key='close'
-              aria-label='Close'
-              color='inherit'
-              className={classes.close}
-              onClick={this.handleClose}
-            >
-              <CloseIcon className={classes.icon} />
-            </IconButton>
-          ]} />
-      </Snackbar>
-
-      )
-    }
+  return (
+    <Snackbar
+      anchorOrigin={{ vertical, horizontal }}
+      open={open}
+      onClose={handleClose}
+    >
+      <SnackbarContent className={classes.error}
+        message={
+          <span id='client-snackbar' className={classes.message}>
+            <ErrorIcon className={classNames(classes.icon, classes.iconVariant)} />
+            {error.message}
+          </span>
+        }
+        action={[
+          <IconButton
+            key='close'
+            aria-label='Close'
+            color='inherit'
+            className={classes.close}
+            onClick={handleClose}
+          >
+            <CloseIcon className={classes.icon} />
+          </IconButton>
+        ]} />
+    </Snackbar>
+  )
 }
 
 ErrorSnackbar.propTypes = {
