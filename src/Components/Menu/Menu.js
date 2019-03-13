@@ -10,6 +10,9 @@ import GamesIcon from '@material-ui/icons/Games'
 import routes from '../../Router/Routes'
 
 const styles = theme => ({
+  menuList: {
+    padding: 0
+  },
   menuLink: {
     textDecoration: 'none'
   },
@@ -44,7 +47,7 @@ function Menu (props) {
   }
 
   return (
-    <MenuList>{ routes.map(renderMenuItem) }</MenuList>
+    <MenuList className={classes.menuList}>{ routes.map(renderMenuItem) }</MenuList>
   )
 }
 

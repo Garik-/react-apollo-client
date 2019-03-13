@@ -20,17 +20,17 @@ const styles = theme => ({
 
 function Header (props) {
   const [menuOpen, setMenuOpen] = React.useState(false)
-  const { classes } = props
+  const { classes, title } = props
   return (
     <React.Fragment>
       <DrawerMenu open={menuOpen} handleClose={() => setMenuOpen(false)}/>
-      <AppBar position='fixed' color='primary'>
+      <AppBar position='sticky' color='primary'>
         <Toolbar>
           <IconButton className={classes.menuButton} color='inherit' aria-label='Menu' onClick={() => setMenuOpen(true)}>
             <MenuIcon />
           </IconButton>
           <Typography variant='h6' color='inherit' className={classes.grow}>
-              Gar|k
+            {title}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -39,7 +39,8 @@ function Header (props) {
 }
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired
 }
 
 export default withStyles(styles)(Header)

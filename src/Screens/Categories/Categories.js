@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
-import { ErrorSnackbar, AddButton } from 'Components'
+import { ErrorSnackbar, AddButton, Header } from 'Components'
 import LinearProgress from '@material-ui/core/LinearProgress'
 
 const styles = theme => ({
@@ -35,10 +35,13 @@ function Categories (props) {
         if (error) return <ErrorSnackbar error={error}/>
 
         return (
+          <React.Fragment>
+          <Header title='Categories'/>
           <div className={classes.root}>
           sfsdf
             <AddButton className={classes.fab}/>
-          </div>)
+          </div>
+          </React.Fragment>)
       }}
     </Query>
   )

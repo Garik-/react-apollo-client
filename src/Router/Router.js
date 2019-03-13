@@ -1,19 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router' // react-router v4
 import routes from './Routes'
-import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
-import { Header } from 'Components'
-
-const styles = {
-  root: {
-    flexGrow: 1
-  },
-  paper: {
-    paddingBottom: 64,
-  }
-}
-
 class Routes extends React.Component {
   state = { loading: true }
 
@@ -37,11 +24,9 @@ class Routes extends React.Component {
   }
 
   render () {
-    const { classes } = this.props
     return (
       <Route render={({ location }) => (
         <React.Fragment>
-          <Header/>
           {this.renderRoutes(location)}
         </React.Fragment>
       )} />
@@ -49,9 +34,5 @@ class Routes extends React.Component {
   }
 }
 
-Routes.propTypes = {
-  classes: PropTypes.object.isRequired
-}
-
-export default withStyles(styles)(Routes)
+export default Routes
 export { routes }
