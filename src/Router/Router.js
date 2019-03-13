@@ -3,10 +3,7 @@ import { Route, Switch } from 'react-router' // react-router v4
 import routes from './Routes'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import { Header, Menu } from 'Components'
-import Grid from '@material-ui/core/Grid'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Paper from '@material-ui/core/Paper'
+import { Header } from 'Components'
 
 const styles = {
   root: {
@@ -44,11 +41,8 @@ class Routes extends React.Component {
     return (
       <Route render={({ location }) => (
         <React.Fragment>
-          <CssBaseline />
-          <Paper square className={classes.paper}>
-            {this.renderRoutes(location)}
-          </Paper>
           <Header/>
+          {this.renderRoutes(location)}
         </React.Fragment>
       )} />
     )

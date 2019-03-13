@@ -7,7 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import { Link } from 'react-router-dom'
 import GamesIcon from '@material-ui/icons/Games'
-import routesType from 'Types/Route/RoutesType'
+import routes from '../../Router/Routes'
 
 const styles = theme => ({
   menuLink: {
@@ -30,7 +30,7 @@ const icons = {
 }
 
 function Menu (props) {
-  const { routes, classes } = props
+  const { classes } = props
   const renderMenuItem = ({ name, path }) => {
     return (
       <Link to={path} className={classes.menuLink} key={`menu-${name}`}>
@@ -49,8 +49,7 @@ function Menu (props) {
 }
 
 Menu.propTypes = {
-  classes: PropTypes.object.isRequired,
-  routes: routesType.isRequired
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(Menu)

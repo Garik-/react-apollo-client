@@ -7,15 +7,14 @@ import classNames from 'classnames'
 
 const styles = theme => ({
   fab: {
-    margin: theme.spacing.unit,
-    marginBottom: 64 + theme.spacing.unit
+    margin: theme.spacing.unit
   }
 })
 
 function AddButton (props) {
   const { classes, className } = props
   return (
-    <Fab color='secondary' aria-label='Add' className={classNames(classes.fab, className)}>
+    <Fab color='primary' aria-label='Add' className={classNames(classes.fab, className)}>
       <AddIcon />
     </Fab>
   )
