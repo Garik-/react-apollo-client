@@ -4,9 +4,8 @@ import { withStyles } from '@material-ui/core/styles'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
-import ListItemAvatar from '@material-ui/core/ListItemAvatar'
-import Avatar from '@material-ui/core/Avatar'
 import gamesType from 'Types/Game/GamesType'
+import GameTableItemAvatar from '../GameTableItemAvatar'
 
 const styles = theme => ({
   root: {
@@ -15,26 +14,13 @@ const styles = theme => ({
   }
 })
 
-const renderAvatar = (images, alt) => {
-  if (images && Array.isArray(images) && images.length >= 1) {
-    const { link } = images[0]
-    return (
-      <ListItemAvatar>
-        <Avatar alt={alt} src={`http://157.230.226.124/media/${link}`} />
-      </ListItemAvatar>
-    )
-  }
-
-  return null
-}
-
 function GameTable (props) {
   const { games, classes } = props
   return (
     <List className={classes.root}>{
       games.map(({ id, name, images }) => (
         <ListItem key={`game-${id}`} button>
-          { renderAvatar(images, name) }
+          <GameTableItemAvatar alt={name} images={images}/>
           <ListItemText primary={name}/>
         </ListItem>
       ))

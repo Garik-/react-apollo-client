@@ -31,7 +31,7 @@ function Games (props) {
     <Query
       query={gql`
       {
-        gamesdsf {
+        games {
           id
           name
           images(where: { type: "game_avatar"}) {
