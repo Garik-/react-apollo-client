@@ -7,6 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import { Link } from 'react-router-dom'
 import GamesIcon from '@material-ui/icons/Games'
+import routesType from 'Types/Route/RoutesType'
 
 const styles = theme => ({
   menuLink: {
@@ -49,7 +50,7 @@ function Menu (props) {
 
 Menu.propTypes = {
   classes: PropTypes.object.isRequired,
-  routes: PropTypes.array.isRequired // TODO: need typing
+  routes: routesType.isRequired
 }
 
 export default withStyles(styles)(Menu)

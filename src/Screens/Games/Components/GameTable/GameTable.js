@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import ListItemAvatar from '@material-ui/core/ListItemAvatar'
 import Avatar from '@material-ui/core/Avatar'
+import gamesType from 'Types/Game/GamesType'
 
 const styles = theme => ({
   root: {
@@ -32,7 +33,7 @@ function GameTable (props) {
   return (
     <List className={classes.root}>{
       games.map(({ id, name, images }) => (
-        <ListItem key={`game-${id}`} dense button>
+        <ListItem key={`game-${id}`} button>
           { renderAvatar(images, name) }
           <ListItemText primary={name}/>
         </ListItem>
@@ -43,7 +44,7 @@ function GameTable (props) {
 
 GameTable.propTypes = {
   classes: PropTypes.object.isRequired,
-  games: PropTypes.array.isRequired // TODO: need type
+  games: gamesType.isRequired
 }
 
 export default withStyles(styles)(GameTable)
