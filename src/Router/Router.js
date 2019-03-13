@@ -1,6 +1,9 @@
 import React from 'react'
 import { Route, Switch } from 'react-router' // react-router v4
 import routes from './Routes'
+import { Grid } from '@material-ui/core'
+import { LeftSide } from './Components'
+import CssBaseline from '@material-ui/core/CssBaseline'
 class Routes extends React.Component {
   state = { loading: true }
 
@@ -25,11 +28,15 @@ class Routes extends React.Component {
 
   render () {
     return (
-      <Route render={({ location }) => (
-        <React.Fragment>
-          {this.renderRoutes(location)}
-        </React.Fragment>
-      )} />
+      <React.Fragment>
+        <CssBaseline />
+        <Route render={({ location }) => (
+          <Grid container>
+            <Grid item><LeftSide/></Grid>
+            <Grid item xs>{this.renderRoutes(location)}</Grid>
+          </Grid>
+        )} />
+      </React.Fragment>
     )
   }
 }

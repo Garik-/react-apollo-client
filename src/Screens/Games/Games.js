@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
-import { ErrorSnackbar, AddButton, Header } from 'Components'
+import { ErrorSnackbar, AddButton, EditButton, DeleteButton, Header } from 'Components'
 import { GameTable } from './Components'
 import LinearProgress from '@material-ui/core/LinearProgress'
 
@@ -17,7 +17,7 @@ const styles = theme => ({
     paddingLeft: theme.spacing.unit * 2,
     paddingRight: theme.spacing.unit * 2
   },
-  fab: {
+  fabPanel: {
     position: 'fixed',
     right: theme.spacing.unit,
     bottom: theme.spacing.unit
@@ -46,10 +46,14 @@ function Games (props) {
 
         return (
           <React.Fragment>
-            <Header title='Games'/>
+            <Header title=''/>
             <div className={classes.root}>
               <GameTable games={data.games}/>
-              <AddButton className={classes.fab}/>
+              <div className={classes.fabPanel}>
+                <AddButton/>
+                <EditButton />
+                <DeleteButton />
+              </div>
             </div>
           </React.Fragment>
         )

@@ -16,20 +16,14 @@ const styles = theme => ({
   menuLink: {
     textDecoration: 'none'
   },
-  menuItem: {
-    '&:focus': {
-      backgroundColor: theme.palette.primary.main,
-      '& $primary, & $icon': {
-        color: theme.palette.common.white
-      }
-    }
-  },
   primary: {},
-  icon: {}
+  icon: {
+  }
 })
 
 const icons = {
-  'Games': <GamesIcon/>
+  'Games': <GamesIcon/>,
+  'Categories': <GamesIcon/>
 }
 
 function Menu (props) {
@@ -38,8 +32,9 @@ function Menu (props) {
     return (
       <Link to={path} className={classes.menuLink} key={`menu-${name}`}>
         <MenuItem className={classes.menuItem} selected={ window.location.pathname === path }>
-          { name in icons && (<ListItemIcon className={classes.icon}>{icons[name]}</ListItemIcon>) }
-          <ListItemText inset primary={name} />
+          { name }
+          {/* { name in icons && (<ListItemIcon className={classes.icon}>{icons[name]}</ListItemIcon>) }
+          <ListItemText inset primary={name} /> */}
         </MenuItem>
       </Link>
 

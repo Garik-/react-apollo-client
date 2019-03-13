@@ -36,11 +36,11 @@ function Categories (props) {
 
         return (
           <React.Fragment>
-          <Header title='Categories'/>
-          <div className={classes.root}>
+            <Header title='Categories'/>
+            <div className={classes.root}>
           sfsdf
-            <AddButton className={classes.fab}/>
-          </div>
+              <AddButton className={classes.fab}/>
+            </div>
           </React.Fragment>)
       }}
     </Query>

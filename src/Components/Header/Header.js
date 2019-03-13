@@ -23,15 +23,15 @@ function Header (props) {
   const { classes, title } = props
   return (
     <React.Fragment>
-      <DrawerMenu open={menuOpen} handleClose={() => setMenuOpen(false)}/>
+      {/* <DrawerMenu open={menuOpen} handleClose={() => setMenuOpen(false)}/> */}
       <AppBar position='sticky' color='primary'>
         <Toolbar>
-          <IconButton className={classes.menuButton} color='inherit' aria-label='Menu' onClick={() => setMenuOpen(true)}>
+          {/* <IconButton className={classes.menuButton} color='inherit' aria-label='Menu' onClick={() => setMenuOpen(true)}>
             <MenuIcon />
-          </IconButton>
-          <Typography variant='h6' color='inherit' className={classes.grow}>
+          </IconButton> */}
+          { title && (<Typography variant='h6' color='inherit' className={classes.grow}>
             {title}
-          </Typography>
+          </Typography>)}
         </Toolbar>
       </AppBar>
     </React.Fragment>
