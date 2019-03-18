@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import MenuItem from '@material-ui/core/MenuItem'
 import MenuList from '@material-ui/core/MenuList'
-import ListItemText from '@material-ui/core/ListItemText'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
+// import ListItemText from '@material-ui/core/ListItemText'
+// import ListItemIcon from '@material-ui/core/ListItemIcon'
 import { Link } from 'react-router-dom'
-import GamesIcon from '@material-ui/icons/Games'
+// import GamesIcon from '@material-ui/icons/Games'
 import routes from '../../Router/Routes'
 
 const styles = theme => ({
@@ -21,10 +21,10 @@ const styles = theme => ({
   }
 })
 
-const icons = {
-  'Games': <GamesIcon/>,
-  'Categories': <GamesIcon/>
-}
+// const icons = {
+//   'Games': <GamesIcon/>,
+//   'Categories': <GamesIcon/>
+// }
 
 function Menu (props) {
   const { classes } = props

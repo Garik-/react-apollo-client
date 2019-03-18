@@ -6,11 +6,14 @@ import gql from 'graphql-tag'
 import { ErrorSnackbar, AddButton, EditButton, DeleteButton, Header } from 'Components'
 import { GameTable } from './Components'
 import LinearProgress from '@material-ui/core/LinearProgress'
+import { debounce } from 'lodash'
+const DEBOUNCE_TIMEOUT = 300
 
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    position: 'relative'
+    position: 'relative',
+    height: '100%'
   },
   text: {
     paddingTop: theme.spacing.unit * 2,
@@ -26,6 +29,16 @@ const styles = theme => ({
 
 function Games (props) {
   const { classes } = props
+  const [search, setSearch] = React.useState('')
+
+  const debounceSetSearch = debounce(value => setSearch(value), DEBOUNCE_TIMEOUT)
+
+  function handleSearch (e) {
+    debounceSetSearch(e.target.value)
+  }
+
+  console.log(search)
+
   return (
     <Query
       query={gql`
@@ -46,7 +59,7 @@ function Games (props) {
 
         return (
           <React.Fragment>
-            <Header title=''/>
+            <Header handleSearch={handleSearch} />
             <div className={classes.root}>
               <GameTable games={data.games}/>
               <div className={classes.fabPanel}>

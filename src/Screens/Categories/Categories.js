@@ -9,7 +9,8 @@ import LinearProgress from '@material-ui/core/LinearProgress'
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    position: 'relative'
+    position: 'relative',
+    height: '100%'
   },
   fab: {
     position: 'fixed',

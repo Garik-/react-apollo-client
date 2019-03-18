@@ -5,23 +5,20 @@ import { Menu } from 'Components'
 import Typography from '@material-ui/core/Typography'
 const HEADER_HEIGHT = 64
 
-const styles = theme => {
-  console.log(theme)
-  return {
-    root: {
-      borderRight: `1px solid ${theme.palette.divider}`,
-      position: 'sticky',
-      top: 0,
-      height: '100vh',
-      width: 250
-    },
-    header: {
-      height: HEADER_HEIGHT,
-      borderBottom: `1px solid ${theme.palette.divider}`,
-      padding: `${theme.spacing.unit / 2}px ${theme.spacing.unit * 2}px`
-    }
+const styles = theme => ({
+  root: {
+    borderRight: `1px solid ${theme.palette.divider}`,
+    position: 'sticky',
+    top: 0,
+    height: '100vh',
+    width: 250
+  },
+  header: {
+    height: HEADER_HEIGHT,
+    borderBottom: `1px solid ${theme.palette.divider}`,
+    padding: `${theme.spacing.unit / 2}px ${theme.spacing.unit * 2}px`
   }
-}
+})
 
 function LeftSide (props) {
   const { classes } = props

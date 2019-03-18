@@ -4,9 +4,12 @@ import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
-import { DrawerMenu } from './Components'
+// import IconButton from '@material-ui/core/IconButton'
+// import MenuIcon from '@material-ui/icons/Menu'
+import {
+  // DrawerMenu
+  Search
+} from './Components'
 
 const styles = theme => ({
   grow: {
@@ -19,8 +22,8 @@ const styles = theme => ({
 })
 
 function Header (props) {
-  const [menuOpen, setMenuOpen] = React.useState(false)
-  const { classes, title } = props
+  // const [menuOpen, setMenuOpen] = React.useState(false)
+  const { classes, title, handleSearch } = props
   return (
     <React.Fragment>
       {/* <DrawerMenu open={menuOpen} handleClose={() => setMenuOpen(false)}/> */}
@@ -32,6 +35,7 @@ function Header (props) {
           { title && (<Typography variant='h6' color='inherit' className={classes.grow}>
             {title}
           </Typography>)}
+          { handleSearch && <Search handleSearch={handleSearch}/> }
         </Toolbar>
       </AppBar>
     </React.Fragment>
@@ -40,7 +44,8 @@ function Header (props) {
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string,
+  handleSearch: PropTypes.func
 }
 
 export default withStyles(styles)(Header)
